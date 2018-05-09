@@ -11,9 +11,9 @@ public class Main1 {
         return matcher.matches();
     }
 
-    static boolean verifyPostCode(String postCode){
-
-    }
+//    static boolean verifyPostCode(String postCode){
+//
+//    }
 
 
     public static void main(String[] args) {
