@@ -1,19 +1,18 @@
-package pl.coderslab.cookie;
+package pl.coderslab.sess;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/setCookie")
-public class Cookie1Set extends HttpServlet {
+@WebServlet("/Servlet01Set")
+public class Servlet01Set extends HttpServlet {
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Cookie c = new Cookie("User", "CodersLab");
-        c.setMaxAge(60*60);
-        response.addCookie(c);
-        response.getWriter().append("OK");
+        HttpSession session = request.getSession();
+        session.setAttribute("counter", 1);
     }
 }
