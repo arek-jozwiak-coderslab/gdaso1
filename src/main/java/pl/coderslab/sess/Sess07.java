@@ -52,9 +52,11 @@ public class Sess07 extends HttpServlet {
         HttpSession session = req.getSession();
         resp.setContentType("text/html");
         resp.setCharacterEncoding("utf-8");
+
         int points = RequestUtils.getIntFromSession("points", 0, session);
         String answer = req.getParameter("answer");
         resp.getWriter().append(answer).append("<br/>");
+
         Map<String, String> capitals = (Map<String, String>) session.getAttribute("capitals");
         String shuffledValue = (String) session.getAttribute("shuffledValue");
         if (answer.equals(capitals.get(shuffledValue))){
@@ -64,6 +66,7 @@ public class Sess07 extends HttpServlet {
         }else{
             resp.getWriter().append("NOT OK");
         }
+        capitals.remove(shuffledValue);
         resp.getWriter().append("<br/>").append("points = " +points);
     }
 }
