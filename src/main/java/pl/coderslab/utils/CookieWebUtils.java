@@ -32,9 +32,11 @@ public class CookieWebUtils {
      */
     public static String getCookieValue(String coookieName, HttpServletRequest request) {
         String cookieValue = null;
-        for (Cookie c : request.getCookies()) {
-            if (coookieName.equals(c.getName())) {
-                cookieValue = c.getValue();
+        if (request.getCookies() != null) {
+            for (Cookie c : request.getCookies()) {
+                if (coookieName.equals(c.getName())) {
+                    cookieValue = c.getValue();
+                }
             }
         }
         return cookieValue;
