@@ -59,6 +59,7 @@ public class Sess07 extends HttpServlet {
         String shuffledValue = (String) session.getAttribute("shuffledValue");
         if (answer.equals(capitals.get(shuffledValue))){
             points++;
+            session.setAttribute("points", points);
             resp.getWriter().append("OK");
         }else{
             resp.getWriter().append("NOT OK");
