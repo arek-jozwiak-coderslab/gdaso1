@@ -15,28 +15,36 @@ import java.util.Random;
 public class Sess02 extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-
         int grade = Integer.parseInt(request.getParameter("grade"));
         if (grade > 0 && grade < 7) {
             int[] grades = (int[]) session.getAttribute("grades");
-
             if (grades == null) {
                 //if variable not exist in session
                 grades = new int[]{grade};
             } else {
                 //variable exist in session
                 grades = addToTab(grades, grade);
-
             }
             session.setAttribute("grades", grades);
         }
     }
+
 
     public double countAvg(int[] grades) {
         double sum = 0;
         for (int el : grades) {
             sum += el;
         }
+        return sum / grades.length;
+    }
+
+    /**
+     * With java 8 streams - example
+     * @param grades
+     * @return
+     */
+    public double countAvg2(int[] grades) {
+        double sum =  Arrays.stream(grades).sum();
         return sum / grades.length;
     }
 
