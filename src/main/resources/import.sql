@@ -4,3 +4,7 @@ CREATE TABLE `books` (
   `author` varchar(255) NOT NULL,
   `isbn` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ALTER TABLE `book`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
