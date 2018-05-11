@@ -19,7 +19,6 @@ public class JdbcExample extends HttpServlet {
         try {
             Connection connection = DbUtil.getConnection();
 
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
