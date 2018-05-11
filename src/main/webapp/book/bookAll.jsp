@@ -14,7 +14,9 @@
 <body>
 <ul>
 <c:forEach var="book" items="${books}">
-    <li>${book.title} - ${book.author}</li>
+    <li>${book.title} - ${book.author}
+        <a href="/bookDelete?id=${book.id}">Usuń</a>
+    </li>
 </c:forEach>
 </ul>
 </body>
