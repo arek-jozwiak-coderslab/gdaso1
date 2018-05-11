@@ -19,8 +19,6 @@ public class BookUpdate extends HttpServlet {
         BookDao bookDao = new BookDao();
         bookDao.update(book);
         response.sendRedirect( request.getContextPath() +"/bookAll");
-
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

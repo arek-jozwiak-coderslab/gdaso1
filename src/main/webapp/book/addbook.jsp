@@ -14,11 +14,11 @@
 <h1>Dodaj książkę</h1>
 <form method="post">
     <p>Podaj Tytuł</p><br/>
-    <input type="text" name="title"/>
+    <input type="text" name="title" value="${book.title}"/>
     <p>Podaj author</p><br/>
-    <input type="text" name="author"/>
+    <input type="text" name="author" value="${book.author}" />
     <p>Podaj isbn</p><br/>
-    <input type="text" name="isbn"/>
+    <input type="text" name="isbn" value="${book.isbn}"/>
     <input type="submit"/>
 </form>
 </body>

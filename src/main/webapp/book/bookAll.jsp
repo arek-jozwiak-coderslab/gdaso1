@@ -13,12 +13,15 @@
 </head>
 <body>
 <ul>
-<c:forEach var="book" items="${books}">
-    <li>${book.title} - ${book.author}
-        <a href="/bookDelete?id=${book.id}">Usuń</a>
-        <a href="/bookEdit?id=${book.id}">Edytuj</a>
-    </li>
-</c:forEach>
+    <div>
+        <a href="/addBook">Dodaj książkę</a>
+    </div>
+    <c:forEach var="book" items="${books}">
+        <li>${book.title} - ${book.author}
+            <a href="/bookDelete?id=${book.id}">Usuń</a>
+            <a href="/bookEdit?id=${book.id}">Edytuj</a>
+        </li>
+    </c:forEach>
 </ul>
 </body>
 </html>
